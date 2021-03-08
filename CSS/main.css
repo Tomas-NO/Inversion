@@ -36,6 +36,16 @@ section {
   min-height: 7rem;
   transition: all 1s ease; }
 
+.ajs-message.ajs-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb; }
+
+.ajs-message.ajs-alerta {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba; }
+
 header {
   user-select: none;
   background-color: #eeeeee;
@@ -389,7 +399,7 @@ footer {
     width: 60rem;
     margin: 0 auto;
     border: 1px solid black;
-    padding: 1rem;
+    padding: 1rem 2rem;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -427,16 +437,6 @@ footer {
     .contenedor-conoce-mas .conoce-mas .formulario #conoce-mas-resultado {
       display: none; }
 
-.ajs-message.ajs-error {
-  color: #721c24;
-  background-color: #f8d7da;
-  border-color: #f5c6cb; }
-
-.ajs-message.ajs-alerta {
-  color: #856404;
-  background-color: #fff3cd;
-  border-color: #ffeeba; }
-
 .contenedor-resumen-inversiones {
   position: fixed;
   top: 0;
@@ -449,11 +449,12 @@ footer {
   .contenedor-resumen-inversiones .resumen-inversiones {
     width: 120rem;
     text-align: center;
-    margin: 7rem auto;
+    margin: 6rem auto;
     background-color: white;
     user-select: none;
     display: none; }
     .contenedor-resumen-inversiones .resumen-inversiones h3 {
+      padding-top: 2rem;
       font-size: 3rem; }
     .contenedor-resumen-inversiones .resumen-inversiones tfoot {
       font-weight: bold; }

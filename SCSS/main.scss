@@ -58,6 +58,19 @@ section {
     transition: all 1s ease;
 }
 
+// CSS de alertas de Alertify
+.ajs-message.ajs-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.ajs-message.ajs-alerta {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
 //* Header *//
 header {
     user-select: none;
@@ -535,7 +548,7 @@ footer {
         width: 60rem;
         margin: 0 auto;
         border: 1px solid black;
-        padding: 1rem;
+        padding: 1rem 2rem;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -586,18 +599,6 @@ footer {
     }
 }
 
-.ajs-message.ajs-error {
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-}
-
-.ajs-message.ajs-alerta {
-    color: #856404;
-    background-color: #fff3cd;
-    border-color: #ffeeba;
-}
-
 //* Resumen de Inversiones *//
 .contenedor-resumen-inversiones {
     position: fixed;
@@ -611,11 +612,12 @@ footer {
     .resumen-inversiones {
         width: 120rem;
         text-align: center;
-        margin: 7rem auto;
+        margin: 6rem auto;
         background-color: white;
         user-select: none;
         display: none; // Se cambia con el slidetoggle
         h3 {
+            padding-top: 2rem;
             font-size: 3rem;
         }
         tfoot {
