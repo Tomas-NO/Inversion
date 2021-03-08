@@ -68,13 +68,25 @@ header {
     width: 100%;
     z-index: 10;
     .navegador {
-        padding: 2rem 0;
         display: flex;
         justify-content: space-between;
         a {
             text-transform: uppercase;
             color: #000000;
             transition: all .5s ease;
+            padding: 2rem 0;
+        }
+        #logo {
+            padding: 0;
+            img {
+                transition: all 1s ease;
+                transform: scale(0.9);
+            }
+        }
+        #logo:hover {
+            img {
+                transform: scale(1);
+            }
         }
         a:hover {
             color: $color-principal;
@@ -82,6 +94,7 @@ header {
         }
         i {
             transition: all .5s ease;
+            padding: 2rem 0;
         }
         i:hover {
             cursor: pointer;
@@ -522,7 +535,7 @@ footer {
         width: 60rem;
         margin: 0 auto;
         border: 1px solid black;
-        padding: 2rem;
+        padding: 1rem;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -558,13 +571,16 @@ footer {
                 border: 1px solid black;
                 border-radius: .8rem;
                 color: black;
-                padding: 1rem 4rem;
+                padding: .5rem 4rem;
                 transition: all .5s ease;
-                margin: 2rem auto 0 auto;
+                margin: 1rem auto 0 auto;
             }
             button:hover {
                 background-color: $color-principal;
                 color: white;
+            }
+            #conoce-mas-resultado {
+                display: none;
             }
         }
     }

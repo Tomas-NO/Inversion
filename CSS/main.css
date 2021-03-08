@@ -45,18 +45,26 @@ header {
   width: 100%;
   z-index: 10; }
   header .navegador {
-    padding: 2rem 0;
     display: flex;
     justify-content: space-between; }
     header .navegador a {
       text-transform: uppercase;
       color: #000000;
-      transition: all .5s ease; }
+      transition: all .5s ease;
+      padding: 2rem 0; }
+    header .navegador #logo {
+      padding: 0; }
+      header .navegador #logo img {
+        transition: all 1s ease;
+        transform: scale(0.9); }
+    header .navegador #logo:hover img {
+      transform: scale(1); }
     header .navegador a:hover {
       color: #1655F6;
       cursor: pointer; }
     header .navegador i {
-      transition: all .5s ease; }
+      transition: all .5s ease;
+      padding: 2rem 0; }
     header .navegador i:hover {
       cursor: pointer;
       color: #1655F6; }
@@ -381,7 +389,7 @@ footer {
     width: 60rem;
     margin: 0 auto;
     border: 1px solid black;
-    padding: 2rem;
+    padding: 1rem;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -410,12 +418,14 @@ footer {
       border: 1px solid black;
       border-radius: .8rem;
       color: black;
-      padding: 1rem 4rem;
+      padding: .5rem 4rem;
       transition: all .5s ease;
-      margin: 2rem auto 0 auto; }
+      margin: 1rem auto 0 auto; }
     .contenedor-conoce-mas .conoce-mas .formulario button:hover {
       background-color: #1655F6;
       color: white; }
+    .contenedor-conoce-mas .conoce-mas .formulario #conoce-mas-resultado {
+      display: none; }
 
 .ajs-message.ajs-error {
   color: #721c24;

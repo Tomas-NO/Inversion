@@ -14,6 +14,14 @@ $(document).ready(function() {
             // Inicializo Animation on Scroll
             AOS.init();
 
+            // Cambio de color el logo cuando le hacen hover
+            $('#logo').hover(function() {
+                $('#logo img').attr('src', 'img/logo2.png')
+            }, function() {
+                $('#logo img').attr('src', 'img/logo.png')
+            })
+
+
             // Aplico el desplazamiento de los links del header
             scroll_inicio()
 

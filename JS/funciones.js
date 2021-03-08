@@ -106,11 +106,7 @@ function scroll_inicio() {
 /* Crea el pop-up */
 function crear_conoce_mas(evento) {
     let numero = evento.target.parentNode.parentNode.id.split('-')[1]
-    console.log(numero)
-    console.log(activos[numero].etiqueta)
-
     let etiqueta = activos[numero].etiqueta
-
     let porcentaje = activos[numero].porcentaje
 
     let contenedorConoceMas = $('#contenedor-conoce-mas')
@@ -159,6 +155,8 @@ function resultado_conoce_mas() {
             $('#formulario').append(ConoceMasResultadoComponente(ganancia, dinero_final))
 
             $('#agregar-resumen').click(agregar_resumen)
+
+            $('#conoce-mas-resultado').slideToggle(1000)
 
         } else {
             dinero_inicial = parseInt($('#dinero-inicial').val())
@@ -335,4 +333,8 @@ function ver_pregunta(evento) {
         respuesta.removeAttr('class')
         icono.removeClass('rotar')
     }
+}
+
+function prueba() {
+    $('#logo img').attr('src', 'img/logo2.png')
 }

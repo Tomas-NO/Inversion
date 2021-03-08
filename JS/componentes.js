@@ -62,11 +62,13 @@ function ConoceMasComponente(etiqueta, porcentaje) {
 // HTML que se agrega al pop-up cuando se calcula la ganancia
 function ConoceMasResultadoComponente(ganancia, dinero_final) {
     return `
-    <label for="ganancia-inversion">Ganancia</label>
-    <input class="form-control" id="ganancia-inversion" type="number" value="${ganancia}" aria-label="Disabled input" disabled="">
-    <label for="dinero-final">Dinero final</label>
-    <input class="form-control" id="dinero-final" type="number" value="${dinero_final}" aria-label="Disabled input" disabled="">
-    <button id="agregar-resumen">Agregar al resumen</button>
+    <div id="conoce-mas-resultado">
+        <label for="ganancia-inversion">Ganancia</label>
+        <input class="form-control" id="ganancia-inversion" type="number" value="${ganancia}" aria-label="Disabled input" disabled="">
+        <label for="dinero-final">Dinero final</label>
+        <input class="form-control" id="dinero-final" type="number" value="${dinero_final}" aria-label="Disabled input" disabled="">
+        <button id="agregar-resumen">Agregar al resumen</button>
+    </div>
     `
 }
 
