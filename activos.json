@@ -1,0 +1,75 @@
+{
+    "activos": [{
+            "nombre": "Apple Inc.",
+            "etiqueta": "APPL",
+            "descripcion": "Tecnología",
+            "moneda": "USD",
+            "porcentaje": 12,
+            "cuotaparte": 135.39,
+            "riesgo": "medio"
+        },
+        {
+            "nombre": "Amazon.com, Inc.",
+            "etiqueta": "AMZN",
+            "descripcion": "Comercio Electrónico",
+            "moneda": "USD",
+            "porcentaje": 10,
+            "cuotaparte": 3286.58,
+            "riesgo": "alto"
+        },
+        {
+            "nombre": "Tesla, Inc.",
+            "etiqueta": "TSLA",
+            "descripcion": "Automóviles Eléctricos",
+            "moneda": "USD",
+            "porcentaje": 5,
+            "cuotaparte": 804.82,
+            "riesgo": "alto"
+        },
+        {
+            "nombre": "Netflix, Inc.",
+            "etiqueta": "NFLX",
+            "descripcion": "Entretenimiento",
+            "moneda": "USD",
+            "porcentaje": 6,
+            "cuotaparte": 563.59,
+            "riesgo": "bajo"
+        },
+        {
+            "nombre": "S&P 500",
+            "etiqueta": "SPX",
+            "descripcion": "Índice",
+            "moneda": "USD",
+            "porcentaje": 7,
+            "cuotaparte": 3909.88,
+            "riesgo": "bajo"
+        },
+        {
+            "nombre": "SPDR Gold Shares",
+            "etiqueta": "GLD",
+            "descripcion": "Oro",
+            "moneda": "USD",
+            "porcentaje": 4,
+            "cuotaparte": 172.71,
+            "riesgo": "medio"
+        },
+        {
+            "nombre": "LTC Properties, Inc.",
+            "etiqueta": "LTC",
+            "descripcion": "Propiedades",
+            "moneda": "USD",
+            "porcentaje": 8,
+            "cuotaparte": 41.68,
+            "riesgo": "medio"
+        },
+        {
+            "nombre": "Banco BBVA Argentina S.A.",
+            "etiqueta": "BBAR.BA",
+            "descripcion": "Banco",
+            "moneda": "ARS",
+            "porcentaje": 3,
+            "cuotaparte": 151.95,
+            "riesgo": "alto"
+        }
+    ]
+}

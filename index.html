@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!--Fuentes-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!--Animaciones de Scroll-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!--Alertify-->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+
+    <!--Normalize-->
+    <link rel="stylesheet" href="CSS/normalize.css">
+
+    <!--CSS Principal-->
+    <link rel="stylesheet" href="CSS/main.css">
+
+    <title>Inversiones</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navegador" id="navegador">
+            <a class="a-inicio">
+                <h2>Logo</h2>
+            </a>
+            <a class="a-activos">Activos</a>
+            <a class="a-preguntas-frecuentes">Preguntas frecuentes</a>
+            <a class="a-contacto">Contacto</a>
+            <i class="fas fa-wallet" id="abrir-resumen"></i>
+        </nav>
+    </header>
+
+    <div id="contenedor-resumen-inversiones"></div>
+
+    <section class="seccion-inicial">
+        <div class="texto-inicial">
+            <h1 data-aos-once="true" data-aos="fade-down-right" data-aos-duration="2000">Descubrí cuál es la inversión <span>para vos</span></h1>
+            <h3 data-aos-once="true" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="300" data-aos-offset="-50">Te ayudamos a elegir las oportunidades que se ajustan a tus objetivos</h3>
+            <div data-aos-once="true" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1000" data-aos-offset="-100">
+                <a class="a-activos">Empezá</a>
+            </div>
+        </div>
+
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-aos-once="true" data-aos="fade-left" data-aos-duration="2000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/Carousel/1.jpg" class="d-block w-100" alt="Imagen del Carousel">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Carousel/2.jpg" class="d-block w-100" alt="Imagen del Carousel">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Carousel/3.jpg" class="d-block w-100" alt="Imagen del Carousel">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tipos-inversionistas">
+        <h2 data-aos-once="true" data-aos="fade-right" data-aos-duration="1000">Una opción para cada perfil</h2>
+        <div class="tipo-inversor">
+            <div class="card" id="riesgo-bajo" data-aos-once="true" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <img src="img/Perfil-inversor/Conservador.jpg" alt="Imagen Perfil Conservador">
+
+                <div class="riesgo riesgo-bajo ">
+                    <p>Riesgo Bajo</p>
+                    <i class="fas fa-thermometer-quarter"></i>
+                </div>
+
+                <div class="card-body">
+                    <h4 class="card-title">Perfil conservador</h4>
+                    <p class="card-text">Invertí sin asumir riesgos importantes y obtené una <span>rentabilidad estable.</span></p>
+                </div>
+            </div>
+            <div class="card" id="riesgo-medio" data-aos-once="true" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                <img src="img/Perfil-inversor/Moderado.jpg" alt="Imagen Perfil Moderado">
+
+                <div class="riesgo riesgo-medio">
+                    <p>Riesgo Medio</p>
+                    <i class="fas fa-thermometer-three-quarters"></i>
+                </div>
+
+                <div class="card-body">
+                    <h4 class="card-title">Perfil moderado</h4>
+                    <p class="card-text">Invertí en una cartera de riesgo mixto a cambio de <span>retornos más grandes.</span></p>
+                </div>
+            </div>
+            <div class="card" id="riesgo-alto" data-aos-once="true" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="900">
+                <img src="img/Perfil-inversor/Agresivo.jpg" alt="Imagen Perfil Agresivo">
+
+                <div class="riesgo riesgo-alto">
+                    <p>Riesgo Alto</p>
+                    <i class="fas fa-thermometer-full"></i>
+                </div>
+
+                <div class="card-body">
+                    <h4 class="card-title">Perfil agresivo</h4>
+                    <p class="card-text">Sacale el <span>mayor rendimiento</span> a tus fondos con una inversión de riesgo alto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="inversiones" id="activos">
+        <h1 data-aos-once="true" data-aos="fade-right" data-aos-offset="200" data-aos-duration="1000">Conocé nuestras inversiones recomendadas</h1>
+        <div class="opciones">
+            <div class="opcion-riesgo">
+                <p data-aos-once="true" data-aos="fade-down" data-aos-offset="200">Nivel de riesgo:</p>
+                <label class="container" data-aos-once="true" data-aos="flip-left" data-aos-duration="1000" data-aos-offset="200" data-aos-delay="200">Bajo
+                    <input type="checkbox" checked="checked" class="filtradores" id="check-bajo">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="container" data-aos-once="true" data-aos="flip-left" data-aos-duration="1000" data-aos-offset="200" data-aos-delay="400">Medio
+                    <input type="checkbox" checked="checked" class="filtradores" id="check-medio">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="container" data-aos-once="true" data-aos="flip-left" data-aos-duration="1000" data-aos-offset="200" data-aos-delay="600">Alto
+                    <input type="checkbox" checked="checked" class="filtradores" id="check-alto">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <div class="opcion-riesgo">
+                <p data-aos-once="true" data-aos="fade-down" data-aos-offset="200" data-aos-delay="800">Moneda:</p>
+                <label class="container" data-aos-once="true" data-aos="flip-left" data-aos-duration="1000" data-aos-offset="200" data-aos-delay="1000">USD
+                    <input type="checkbox" checked="checked" class="filtradores" id="check-dolar">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="container" data-aos-once="true" data-aos="flip-left" data-aos-duration="1000" data-aos-offset="200" data-aos-delay="1200">ARS
+                    <input type="checkbox" checked="checked" class="filtradores" id="check-peso">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="productos" id="productos" data-aos-once="true" data-aos="zoom-in" data-aos-duration="2200" data-aos-offset="-50"></div>
+
+    </section>
+
+    <div id="contenedor-conoce-mas"></div>
+
+    <section class="preguntas-frecuentes" id="preguntas-frecuentes">
+        <h2 data-aos-once="true" data-aos="fade-right" data-aos-duration="1000">Preguntas frecuentes</h2>
+        <div class="preguntas">
+            <div class="contenedor-pregunta" data-aos-once="true" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-offset="200">
+                <div class="pregunta" id="pregunta-1">
+                    <div class="pregunta-titulo">
+                        <h4>¿Qué es una cuotaparte?</h4>
+                        <i class="fas fa-angle-left"></i>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati totam nobis quam iusto ad corrupti reprehenderit dolor amet distinctio, deserunt facilis deleniti officiis placeat, nisi impedit ut non mollitia rem.</p>
+                </div>
+            </div>
+
+            <div class="contenedor-pregunta" data-aos-once="true" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" data-aos-offset="200">
+                <div class="pregunta" id="pregunta-2">
+                    <div class="pregunta-titulo">
+                        <h4>¿Puedo invertir en esta página?</h4>
+                        <i class="fas fa-angle-left"></i>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati totam nobis quam iusto ad corrupti reprehenderit dolor amet distinctio, deserunt facilis deleniti officiis placeat, nisi impedit ut non mollitia rem.</p>
+                </div>
+            </div>
+
+            <div class="contenedor-pregunta" data-aos-once="true" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="900">
+                <div class="pregunta" id="pregunta-3">
+                    <div class="pregunta-titulo">
+                        <h4>¿Cuanto dinero necesito para empezar?</h4>
+                        <i class="fas fa-angle-left"></i>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati totam nobis quam iusto ad corrupti reprehenderit dolor amet distinctio, deserunt facilis deleniti officiis placeat, nisi impedit ut non mollitia rem.</p>
+                </div>
+            </div>
+
+            <div class="contenedor-pregunta" data-aos-once="true" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1200">
+                <div class="pregunta" id="pregunta-4">
+                    <div class="pregunta-titulo">
+                        <h4>¿Por cuánto tiempo puedo invertir?</h4>
+                        <i class="fas fa-angle-left"></i>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati totam nobis quam iusto ad corrupti reprehenderit dolor amet distinctio, deserunt facilis deleniti officiis placeat, nisi impedit ut non mollitia rem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-arriba">
+            <div class="newsletter">
+                <form action="" method="POST">
+                    <h3>Newsletter</h3>
+                    <p>Recibí todas las noticias al instante</p>
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="text" name="apellido" placeholder="Apellido" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="submit" value="Anotarse" id="anotarse">
+                </form>
+            </div>
+
+            <div class="iconos-footer" id="contacto">
+                <h3>Contacto</h3>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" target="_blank"><i class="far fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            <p>El contenido del presente sitio no constituye asesoramiento en inversiones ni una invitación a efectuar inversiones en los fondos comunes de inversión aquí mostrados. Cualquier persona interesada en analizar y, en su caso, invertir en los
+                fondos comunes de inversión aquí descriptos, deberá consultar la información contenida en sus respectivos reglamentos de gestión. La información aquí contenida está sujeta a cambios y modificaciones y no puede ser considerada definitiva
+                por aquellas personas que tomen conocimiento de ella. El receptor deberá basarse exclusivamente en su propia investigación, evaluación y juicio independiente para tomar una decisión relativa a la inversión en fondos comunes de inversión.
+                Los rendimientos pasados obtenidos por los fondos comunes de inversión son meros indicadores y no implican, bajo ningún concepto, promesas de rendimientos futuros.</p>
+        </div>
+    </footer>
+
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/3346870acf.js" crossorigin="anonymous"></script>
+
+    <!--Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!--Animaciones de Scroll-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!--Alertify-->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+    <!--JS-->
+    <script src="JS/objetos.js"></script>
+    <script src="JS/componentes.js"></script>
+    <script src="JS/funciones.js"></script>
+    <script src="JS/main.js"></script>
+
+</body>
+
+</html>

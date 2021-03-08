@@ -1,0 +1,453 @@
+@charset "UTF-8";
+html {
+  font-size: 62.5%;
+  /* Reset para REMS - 62.5% = 10px de 16 px */
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+body {
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif; }
+
+a {
+  text-decoration: none; }
+
+section {
+  width: 80%;
+  max-width: 110rem;
+  margin: 0 auto; }
+
+section {
+  margin-top: 5rem;
+  margin-bottom: 5rem; }
+
+.no-visible-riesgo,
+.no-visible-moneda {
+  display: none; }
+
+.rotar {
+  transform: rotate(-90deg); }
+
+.altura-maxima {
+  min-height: 7rem;
+  transition: all 1s ease; }
+
+header {
+  user-select: none;
+  background-color: #eeeeee;
+  padding: 0 10%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10; }
+  header .navegador {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between; }
+    header .navegador a {
+      text-transform: uppercase;
+      color: #000000;
+      transition: all .5s ease; }
+    header .navegador a:hover {
+      color: #1655F6;
+      cursor: pointer; }
+    header .navegador i {
+      transition: all .5s ease; }
+    header .navegador i:hover {
+      cursor: pointer;
+      color: #1655F6; }
+    header .navegador #cerrar-resumen {
+      color: #1655F6; }
+
+/* Sección inicial */
+.seccion-inicial {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Titillium Web", sans-serif;
+  height: 75rem;
+  margin-top: 15rem;
+  user-select: none; }
+  .seccion-inicial .texto-inicial {
+    width: calc(48% - 2rem);
+    margin: auto 0; }
+    .seccion-inicial .texto-inicial h1 {
+      font-size: 7rem;
+      font-weight: 900; }
+      .seccion-inicial .texto-inicial h1 span {
+        color: #1655F6; }
+    .seccion-inicial .texto-inicial h3 {
+      font-size: 3rem;
+      color: #9b9b9b;
+      margin: 4rem 0; }
+    .seccion-inicial .texto-inicial a {
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+      padding: 1rem 8rem;
+      background-color: #1655F6;
+      box-shadow: 1rem 1rem #000000;
+      transition: all .5s ease; }
+    .seccion-inicial .texto-inicial a:hover {
+      cursor: pointer;
+      box-shadow: 2rem 2rem #000000;
+      background-color: #7448ff; }
+  .seccion-inicial .carousel {
+    width: calc(48% - 2rem); }
+    .seccion-inicial .carousel img {
+      width: 30rem;
+      height: 75rem; }
+
+/* Tipo de Inversor */
+.tipos-inversionistas {
+  margin-top: 10rem;
+  user-select: none; }
+  .tipos-inversionistas h2 {
+    font-weight: bold;
+    font-size: 4rem;
+    margin-bottom: 5rem; }
+  .tipos-inversionistas .tipo-inversor {
+    display: flex;
+    justify-content: space-between; }
+    .tipos-inversionistas .tipo-inversor .card {
+      width: calc(33.3% - 2rem); }
+      .tipos-inversionistas .tipo-inversor .card img {
+        height: 7rem;
+        width: 6rem;
+        margin-left: 1rem;
+        margin-top: 1rem; }
+      .tipos-inversionistas .tipo-inversor .card .riesgo {
+        color: white;
+        position: absolute;
+        top: 3rem;
+        right: 4rem;
+        display: flex;
+        transition: all .5s ease; }
+        .tipos-inversionistas .tipo-inversor .card .riesgo p {
+          margin-top: .5rem;
+          font-family: "Titillium Web", sans-serif; }
+        .tipos-inversionistas .tipo-inversor .card .riesgo i {
+          font-size: 4rem;
+          margin-left: 1.8rem; }
+      .tipos-inversionistas .tipo-inversor .card .card-body h4 {
+        font-weight: bold;
+        font-size: 2.5rem; }
+      .tipos-inversionistas .tipo-inversor .card .card-body p {
+        color: #9b9b9b; }
+        .tipos-inversionistas .tipo-inversor .card .card-body p span {
+          font-weight: bold;
+          color: #000000; }
+    .tipos-inversionistas .tipo-inversor .card:hover .card-img .regla-riesgo {
+      height: 7rem;
+      width: 10rem; }
+    .tipos-inversionistas .tipo-inversor #riesgo-bajo:hover .riesgo-bajo {
+      color: #008037; }
+    .tipos-inversionistas .tipo-inversor #riesgo-medio:hover .riesgo-medio {
+      color: #ffde59; }
+    .tipos-inversionistas .tipo-inversor #riesgo-alto:hover .riesgo-alto {
+      color: #ff1616; }
+
+/* Sector de Inversion */
+.inversiones {
+  margin-top: 20rem;
+  user-select: none; }
+  .inversiones h1 {
+    margin-bottom: 5rem;
+    font-size: 4rem;
+    font-weight: bold; }
+  .inversiones .opciones {
+    display: flex; }
+    .inversiones .opciones .opcion-riesgo {
+      display: flex;
+      margin-bottom: 8rem;
+      /* Customize the label (the container) */
+      /* Hide the browser's default checkbox */
+      /* Create a custom checkbox */
+      /* On mouse-over, add a grey background color */
+      /* When the checkbox is checked, add a blue background */
+      /* Create the checkmark/indicator (hidden when not checked) */
+      /* Show the checkmark when checked */
+      /* Style the checkmark/indicator */ }
+      .inversiones .opciones .opcion-riesgo p {
+        font-size: 3rem; }
+      .inversiones .opciones .opcion-riesgo .container {
+        display: block;
+        position: relative;
+        padding-left: 3.5rem;
+        cursor: pointer;
+        margin: 1rem 5rem;
+        font-size: 1.8rem;
+        width: 5rem; }
+      .inversiones .opciones .opcion-riesgo .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0; }
+      .inversiones .opciones .opcion-riesgo .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 2.5rem;
+        width: 2.5rem;
+        background-color: #eee; }
+      .inversiones .opciones .opcion-riesgo .container:hover input ~ .checkmark {
+        background-color: #ccc; }
+      .inversiones .opciones .opcion-riesgo .container input:checked ~ .checkmark {
+        background-color: #1655F6; }
+      .inversiones .opciones .opcion-riesgo .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none; }
+      .inversiones .opciones .opcion-riesgo .container input:checked ~ .checkmark:after {
+        display: block; }
+      .inversiones .opciones .opcion-riesgo .container .checkmark:after {
+        left: .9rem;
+        top: .5rem;
+        width: .5rem;
+        height: 1rem;
+        border: solid white;
+        border-width: 0 .3rem .3rem 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg); }
+  .inversiones .productos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center; }
+    .inversiones .productos .card {
+      width: 22rem;
+      height: 30rem;
+      box-shadow: 0.2rem 0.2rem 1rem #000000;
+      margin: 0 2rem 4rem 2rem;
+      transition: all .5s ease; }
+      .inversiones .productos .card .icono-termometro {
+        position: absolute;
+        font-size: 2rem;
+        top: .5rem;
+        right: .2rem; }
+      .inversiones .productos .card h4 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        max-height: 4rem; }
+      .inversiones .productos .card .card-body h5 {
+        margin-bottom: 1.2rem; }
+      .inversiones .productos .card .card-body .moneda {
+        font-size: 1.2rem;
+        padding: .5rem .5rem;
+        border: 1px solid #9b9b9b;
+        border-radius: 3rem;
+        margin-bottom: 1.2rem;
+        color: #1655F6;
+        display: inline-block; }
+      .inversiones .productos .card .card-body .card-text {
+        color: #9b9b9b;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin: 0; }
+      .inversiones .productos .card .card-body .porcentaje-anual {
+        font-size: 4rem; }
+        .inversiones .productos .card .card-body .porcentaje-anual i {
+          color: green; }
+      .inversiones .productos .card .card-body .valor-cuotaparte {
+        font-weight: bold; }
+      .inversiones .productos .card .card-body button {
+        background-color: white;
+        color: #1655F6;
+        font-size: 1.5rem;
+        padding: .5rem 4rem;
+        transition: all .5s ease; }
+      .inversiones .productos .card .card-body button:hover {
+        background-color: #1655F6;
+        color: white; }
+    .inversiones .productos .card:hover {
+      transform: scale(1.1); }
+    .inversiones .productos .r-bajo .icono-termometro {
+      color: #008037; }
+    .inversiones .productos .r-medio .icono-termometro {
+      color: #ffde59; }
+    .inversiones .productos .r-alto .icono-termometro {
+      color: #ff1616; }
+
+/* Preguntas Frecuentes */
+.preguntas-frecuentes h2 {
+  font-size: 4rem;
+  font-weight: bold;
+  user-select: none; }
+
+.preguntas-frecuentes .preguntas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  user-select: none; }
+  .preguntas-frecuentes .preguntas .contenedor-pregunta {
+    width: 45%; }
+    .preguntas-frecuentes .preguntas .contenedor-pregunta .pregunta {
+      transition: max-height 1s ease-in;
+      margin-top: 2rem;
+      border: 1px solid black;
+      border-radius: 2rem;
+      max-height: 6rem; }
+      .preguntas-frecuentes .preguntas .contenedor-pregunta .pregunta .pregunta-titulo {
+        display: flex;
+        justify-content: space-between;
+        font-size: 2rem;
+        padding: 2rem; }
+        .preguntas-frecuentes .preguntas .contenedor-pregunta .pregunta .pregunta-titulo h4 {
+          font-size: 2rem;
+          font-weight: bold;
+          color: #1655F6;
+          max-width: 90%; }
+        .preguntas-frecuentes .preguntas .contenedor-pregunta .pregunta .pregunta-titulo i {
+          transition: transform 1s ease-in; }
+      .preguntas-frecuentes .preguntas .contenedor-pregunta .pregunta p {
+        transition: opacity .5s linear;
+        padding: 0 2rem;
+        opacity: 0; }
+      .preguntas-frecuentes .preguntas .contenedor-pregunta .pregunta .pregunta-contenido-visible {
+        opacity: 1;
+        transition: opacity 1s linear 1s; }
+    .preguntas-frecuentes .preguntas .contenedor-pregunta .pregunta:hover {
+      cursor: pointer; }
+
+footer {
+  padding: 0 10%;
+  background-color: #eeeeee; }
+  footer .footer-arriba {
+    user-select: none;
+    padding-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-around; }
+    footer .footer-arriba .newsletter {
+      background-color: #1655F6;
+      border-radius: 2rem;
+      color: white; }
+      footer .footer-arriba .newsletter form {
+        padding: 2rem; }
+        footer .footer-arriba .newsletter form h3 {
+          text-align: center;
+          font-size: 3rem; }
+        footer .footer-arriba .newsletter form input {
+          display: block;
+          margin: 0.5rem auto;
+          border: solid black 2px;
+          border-radius: 2rem;
+          padding: 0.5rem 0 0.5rem 1rem;
+          font-size: 1.5rem; }
+        footer .footer-arriba .newsletter form #anotarse {
+          background-color: black;
+          color: white;
+          transition: all .5s ease;
+          letter-spacing: 0.2rem;
+          padding: 0.5rem 3rem;
+          font-size: 1.5rem;
+          font-family: "Titillium Web", sans-serif;
+          font-weight: bold; }
+        footer .footer-arriba .newsletter form #anotarse:hover {
+          background-color: white;
+          color: black; }
+    footer .footer-arriba .iconos-footer h3 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      text-align: center; }
+    footer .footer-arriba .iconos-footer i:hover {
+      background-color: #7448ff; }
+    footer .footer-arriba .iconos-footer i {
+      font-size: 2.5rem;
+      color: #ffffff;
+      border-radius: 2rem;
+      padding: 1rem;
+      background-color: #1655F6;
+      transition: all .4s ease; }
+  footer .disclaimer {
+    color: #9b9b9b;
+    padding: 3rem 0; }
+
+.contenedor-conoce-mas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 15;
+  transition: all 1s ease; }
+  .contenedor-conoce-mas .conoce-mas {
+    width: 60rem;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 2rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    display: none; }
+    .contenedor-conoce-mas .conoce-mas i {
+      color: #c70505;
+      position: absolute;
+      right: 1rem;
+      top: 1rem; }
+    .contenedor-conoce-mas .conoce-mas i:hover {
+      cursor: pointer; }
+    .contenedor-conoce-mas .conoce-mas .formulario label {
+      margin-top: .5rem; }
+    .contenedor-conoce-mas .conoce-mas .formulario label:first-of-type {
+      margin-top: 0; }
+    .contenedor-conoce-mas .conoce-mas .formulario input {
+      display: block;
+      width: 100%; }
+    .contenedor-conoce-mas .conoce-mas .formulario p {
+      margin: 1rem 0 0 0; }
+    .contenedor-conoce-mas .conoce-mas .formulario button {
+      display: block;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: .8rem;
+      color: black;
+      padding: 1rem 4rem;
+      transition: all .5s ease;
+      margin: 2rem auto 0 auto; }
+    .contenedor-conoce-mas .conoce-mas .formulario button:hover {
+      background-color: #1655F6;
+      color: white; }
+
+.ajs-message.ajs-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb; }
+
+.ajs-message.ajs-alerta {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba; }
+
+.contenedor-resumen-inversiones {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 5;
+  transition: all 1s ease; }
+  .contenedor-resumen-inversiones .resumen-inversiones {
+    width: 120rem;
+    text-align: center;
+    margin: 7rem auto;
+    background-color: white;
+    user-select: none;
+    display: none; }
+    .contenedor-resumen-inversiones .resumen-inversiones h3 {
+      font-size: 3rem; }
+    .contenedor-resumen-inversiones .resumen-inversiones tfoot {
+      font-weight: bold; }
+    .contenedor-resumen-inversiones .resumen-inversiones i {
+      color: #c70505; }
+    .contenedor-resumen-inversiones .resumen-inversiones i:hover {
+      cursor: pointer; }

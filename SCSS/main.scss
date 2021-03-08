@@ -1,0 +1,615 @@
+html {
+    font-size: 62.5%;
+    /* Reset para REMS - 62.5% = 10px de 16 px */
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+//* Variables *//
+$fuente-principal: 'Open Sans',
+sans-serif;
+$fuente-secundaria: 'Titillium Web',
+sans-serif;
+$color-principal: #1655F6;
+$color-violeta: #7448ff;
+$color-gris: rgb(155, 155, 155);
+$color-secciones: #eeeeee;
+$color-conservador: rgb(0, 128, 55);
+$color-moderado:rgb(255, 222, 89);
+$color-agresivo: rgb(255, 22, 22);
+//* General *//
+body {
+    font-size: 1.6rem;
+    font-family: $fuente-principal;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    width: 80%;
+    max-width: 110rem;
+    margin: 0 auto;
+}
+
+section {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+//* Utilidades *//
+.no-visible-riesgo,
+.no-visible-moneda {
+    display: none;
+}
+
+.rotar {
+    transform: rotate(-90deg);
+}
+
+.altura-maxima {
+    min-height: 7rem;
+    transition: all 1s ease;
+}
+
+//* Header *//
+header {
+    user-select: none;
+    background-color: $color-secciones;
+    padding: 0 10%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    .navegador {
+        padding: 2rem 0;
+        display: flex;
+        justify-content: space-between;
+        a {
+            text-transform: uppercase;
+            color: #000000;
+            transition: all .5s ease;
+        }
+        a:hover {
+            color: $color-principal;
+            cursor: pointer;
+        }
+        i {
+            transition: all .5s ease;
+        }
+        i:hover {
+            cursor: pointer;
+            color: $color-principal;
+        }
+        #cerrar-resumen {
+            color: $color-principal;
+        }
+    }
+}
+
+//* Relleno *//
+
+/* Sección inicial */
+
+.seccion-inicial {
+    display: flex;
+    justify-content: space-between;
+    font-family: $fuente-secundaria;
+    height: 75rem;
+    margin-top: 15rem;
+    user-select: none;
+    .texto-inicial {
+        width: calc(48% - 2rem);
+        margin: auto 0;
+        h1 {
+            font-size: 7rem;
+            font-weight: 900;
+            span {
+                color: $color-principal;
+            }
+        }
+        h3 {
+            font-size: 3rem;
+            color: $color-gris;
+            margin: 4rem 0;
+        }
+        a {
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            padding: 1rem 8rem;
+            background-color: $color-principal;
+            box-shadow: 1rem 1rem #000000;
+            transition: all .5s ease;
+        }
+        a:hover {
+            cursor: pointer;
+            box-shadow: 2rem 2rem #000000;
+            background-color: $color-violeta;
+        }
+    }
+    .carousel {
+        width: calc(48% - 2rem);
+        img {
+            width: 30rem;
+            height: 75rem;
+        }
+    }
+}
+
+
+/* Tipo de Inversor */
+
+.tipos-inversionistas {
+    margin-top: 10rem;
+    user-select: none;
+    h2 {
+        font-weight: bold;
+        font-size: 4rem;
+        margin-bottom: 5rem;
+    }
+    .tipo-inversor {
+        display: flex;
+        justify-content: space-between;
+        .card {
+            width: calc(33.3% - 2rem);
+            img {
+                height: 7rem;
+                width: 6rem;
+                margin-left: 1rem;
+                margin-top: 1rem;
+            }
+            .riesgo {
+                color: white;
+                position: absolute;
+                top: 3rem;
+                right: 4rem;
+                display: flex;
+                transition: all .5s ease;
+                p {
+                    margin-top: .5rem;
+                    font-family: $fuente-secundaria;
+                }
+                i {
+                    font-size: 4rem;
+                    margin-left: 1.8rem;
+                }
+            }
+            .card-body {
+                h4 {
+                    font-weight: bold;
+                    font-size: 2.5rem;
+                }
+                p {
+                    color: $color-gris;
+                    span {
+                        font-weight: bold;
+                        color: #000000;
+                    }
+                }
+            }
+        }
+        .card:hover {
+            .card-img {
+                .regla-riesgo {
+                    height: 7rem;
+                    width: 10rem;
+                }
+            }
+        }
+        #riesgo-bajo:hover {
+            .riesgo-bajo {
+                color: $color-conservador;
+            }
+        }
+        #riesgo-medio:hover {
+            .riesgo-medio {
+                color: $color-moderado;
+            }
+        }
+        #riesgo-alto:hover {
+            .riesgo-alto {
+                color: $color-agresivo;
+            }
+        }
+    }
+}
+
+
+/* Sector de Inversion */
+
+.inversiones {
+    margin-top: 20rem;
+    user-select: none;
+    h1 {
+        margin-bottom: 5rem;
+        font-size: 4rem;
+        font-weight: bold;
+    }
+    .opciones {
+        display: flex;
+        // Opción de Riesgo
+        .opcion-riesgo {
+            display: flex;
+            margin-bottom: 8rem;
+            p {
+                font-size: 3rem;
+            }
+            /* Customize the label (the container) */
+            .container {
+                display: block;
+                position: relative;
+                padding-left: 3.5rem;
+                cursor: pointer;
+                margin: 1rem 5rem;
+                font-size: 1.8rem;
+                width: 5rem;
+            }
+            /* Hide the browser's default checkbox */
+            .container input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+            /* Create a custom checkbox */
+            .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 2.5rem;
+                width: 2.5rem;
+                background-color: #eee;
+            }
+            /* On mouse-over, add a grey background color */
+            .container:hover input~.checkmark {
+                background-color: #ccc;
+            }
+            /* When the checkbox is checked, add a blue background */
+            .container input:checked~.checkmark {
+                background-color: $color-principal;
+            }
+            /* Create the checkmark/indicator (hidden when not checked) */
+            .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+            /* Show the checkmark when checked */
+            .container input:checked~.checkmark:after {
+                display: block;
+            }
+            /* Style the checkmark/indicator */
+            .container .checkmark:after {
+                left: .9rem;
+                top: .5rem;
+                width: .5rem;
+                height: 1rem;
+                border: solid white;
+                border-width: 0 .3rem .3rem 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+    }
+    // Inversiones
+    .productos {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        text-align: center;
+        .card {
+            width: 22rem;
+            height: 30rem;
+            box-shadow: 0.2rem 0.2rem 1rem #000000;
+            margin: 0 2rem 4rem 2rem;
+            transition: all .5s ease;
+            .icono-termometro {
+                position: absolute;
+                font-size: 2rem;
+                top: .5rem;
+                right: .2rem;
+            }
+            h4 {
+                font-size: 1.5rem;
+                font-weight: bold;
+                max-height: 4rem;
+            }
+            .card-body {
+                h5 {
+                    margin-bottom: 1.2rem;
+                }
+                .moneda {
+                    font-size: 1.2rem;
+                    padding: .5rem .5rem;
+                    border: 1px solid $color-gris;
+                    border-radius: 3rem;
+                    margin-bottom: 1.2rem;
+                    color: $color-principal;
+                    display: inline-block;
+                }
+                .card-text {
+                    color: $color-gris;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    margin: 0;
+                }
+                .porcentaje-anual {
+                    font-size: 4rem;
+                    i {
+                        color: green;
+                    }
+                }
+                .valor-cuotaparte {
+                    font-weight: bold;
+                }
+                button {
+                    background-color: white;
+                    color: $color-principal;
+                    font-size: 1.5rem;
+                    padding: .5rem 4rem;
+                    transition: all .5s ease;
+                }
+                button:hover {
+                    background-color: $color-principal;
+                    color: white;
+                }
+            }
+        }
+        .card:hover {
+            transform: scale(1.1);
+        }
+        .r-bajo {
+            .icono-termometro {
+                color: $color-conservador;
+            }
+        }
+        .r-medio {
+            .icono-termometro {
+                color: $color-moderado;
+            }
+        }
+        .r-alto {
+            .icono-termometro {
+                color: $color-agresivo;
+            }
+        }
+    }
+}
+
+
+/* Preguntas Frecuentes */
+
+.preguntas-frecuentes {
+    h2 {
+        font-size: 4rem;
+        font-weight: bold;
+        user-select: none;
+    }
+    .preguntas {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        user-select: none;
+        .contenedor-pregunta {
+            width: 45%;
+            .pregunta {
+                transition: max-height 1s ease-in;
+                margin-top: 2rem;
+                border: 1px solid black;
+                border-radius: 2rem;
+                max-height: 6rem;
+                .pregunta-titulo {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 2rem;
+                    padding: 2rem;
+                    h4 {
+                        font-size: 2rem;
+                        font-weight: bold;
+                        color: $color-principal;
+                        max-width: 90%;
+                    }
+                    i {
+                        transition: transform 1s ease-in;
+                    }
+                }
+                p {
+                    transition: opacity .5s linear;
+                    padding: 0 2rem;
+                    opacity: 0;
+                }
+                .pregunta-contenido-visible {
+                    opacity: 1;
+                    transition: opacity 1s linear 1s;
+                }
+            }
+            .pregunta:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+//* Footer *//
+footer {
+    padding: 0 10%;
+    background-color: $color-secciones;
+    .footer-arriba {
+        user-select: none;
+        padding-top: 3rem;
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: space-around;
+        .newsletter {
+            background-color: $color-principal;
+            border-radius: 2rem;
+            color: white;
+            form {
+                h3 {
+                    text-align: center;
+                    font-size: 3rem;
+                }
+                padding: 2rem;
+                input {
+                    display: block;
+                    margin: 0.5rem auto;
+                    border: solid black 2px;
+                    border-radius: 2rem;
+                    padding: 0.5rem 0 0.5rem 1rem;
+                    font-size: 1.5rem;
+                }
+                #anotarse {
+                    background-color: black;
+                    color: white;
+                    transition: all .5s ease;
+                    letter-spacing: 0.2rem;
+                    padding: 0.5rem 3rem;
+                    font-size: 1.5rem;
+                    font-family: $fuente-secundaria;
+                    font-weight: bold;
+                }
+                #anotarse:hover {
+                    background-color: white;
+                    color: black;
+                }
+            }
+        }
+        .iconos-footer {
+            h3 {
+                font-size: 3rem;
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+            i:hover {
+                background-color: $color-violeta;
+            }
+            i {
+                font-size: 2.5rem;
+                color: #ffffff;
+                border-radius: 2rem;
+                padding: 1rem;
+                background-color: $color-principal;
+                transition: all .4s ease;
+            }
+        }
+    }
+    .disclaimer {
+        color: $color-gris;
+        padding: 3rem 0;
+    }
+}
+
+//* Datos Ingresados de las Inversiones *//
+.contenedor-conoce-mas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 15;
+    transition: all 1s ease;
+    .conoce-mas {
+        width: 60rem;
+        margin: 0 auto;
+        border: 1px solid black;
+        padding: 2rem;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        display: none; // Se cambia con el slidetoggle
+        i {
+            color: #c70505;
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+        }
+        i:hover {
+            cursor: pointer;
+        }
+        .formulario {
+            label {
+                margin-top: .5rem;
+            }
+            label:first-of-type {
+                margin-top: 0;
+            }
+            input {
+                display: block;
+                width: 100%;
+            }
+            p {
+                margin: 1rem 0 0 0;
+            }
+            button {
+                display: block;
+                background-color: white;
+                border: 1px solid black;
+                border-radius: .8rem;
+                color: black;
+                padding: 1rem 4rem;
+                transition: all .5s ease;
+                margin: 2rem auto 0 auto;
+            }
+            button:hover {
+                background-color: $color-principal;
+                color: white;
+            }
+        }
+    }
+}
+
+.ajs-message.ajs-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.ajs-message.ajs-alerta {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+//* Resumen de Inversiones *//
+.contenedor-resumen-inversiones {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 5;
+    transition: all 1s ease;
+    .resumen-inversiones {
+        width: 120rem;
+        text-align: center;
+        margin: 7rem auto;
+        background-color: white;
+        user-select: none;
+        display: none; // Se cambia con el slidetoggle
+        h3 {
+            font-size: 3rem;
+        }
+        tfoot {
+            font-weight: bold;
+        }
+        i {
+            color: #c70505;
+        }
+        i:hover {
+            cursor: pointer;
+        }
+    }
+}
