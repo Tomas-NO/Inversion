@@ -43,6 +43,11 @@ section {
     margin-bottom: 5rem;
 }
 
+button,
+input {
+    outline: none!important;
+}
+
 //* Utilidades *//
 .no-visible-riesgo,
 .no-visible-moneda {
@@ -71,6 +76,12 @@ section {
     border-color: #ffeeba;
 }
 
+.ajs-message.ajs-exito {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+}
+
 //* Header *//
 header {
     user-select: none;
@@ -80,6 +91,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 10;
+    box-shadow: 0 .5rem .5rem 0 rgba(0, 0, 0, 0.50);
     .navegador {
         display: flex;
         justify-content: space-between;
@@ -185,6 +197,7 @@ header {
         justify-content: space-between;
         .card {
             width: calc(33.3% - 2rem);
+            box-shadow: 0 0 1rem 0.2rem rgba(0, 0, 0, 0.7);
             img {
                 height: 7rem;
                 width: 6rem;
@@ -335,7 +348,7 @@ header {
         .card {
             width: 22rem;
             height: 30rem;
-            box-shadow: 0.2rem 0.2rem 1rem #000000;
+            box-shadow: 0 0 1rem 0.2rem rgba(0, 0, 0, 1);
             margin: 0 2rem 4rem 2rem;
             transition: all .5s ease;
             .icono-termometro {
@@ -432,7 +445,7 @@ header {
                 margin-top: 2rem;
                 border: 1px solid black;
                 border-radius: 2rem;
-                max-height: 6rem;
+                box-shadow: 0 0 .4rem .2rem rgba(0, 0, 0, .4);
                 .pregunta-titulo {
                     display: flex;
                     justify-content: space-between;
@@ -445,17 +458,12 @@ header {
                         max-width: 90%;
                     }
                     i {
-                        transition: transform 1s ease-in;
+                        transition: transform .5s ease-in-out;
                     }
                 }
                 p {
-                    transition: opacity .5s linear;
                     padding: 0 2rem;
-                    opacity: 0;
-                }
-                .pregunta-contenido-visible {
-                    opacity: 1;
-                    transition: opacity 1s linear 1s;
+                    display: none;
                 }
             }
             .pregunta:hover {
@@ -479,34 +487,33 @@ footer {
             background-color: $color-principal;
             border-radius: 2rem;
             color: white;
-            form {
-                h3 {
-                    text-align: center;
-                    font-size: 3rem;
-                }
-                padding: 2rem;
-                input {
-                    display: block;
-                    margin: 0.5rem auto;
-                    border: solid black 2px;
-                    border-radius: 2rem;
-                    padding: 0.5rem 0 0.5rem 1rem;
-                    font-size: 1.5rem;
-                }
-                #anotarse {
-                    background-color: black;
-                    color: white;
-                    transition: all .5s ease;
-                    letter-spacing: 0.2rem;
-                    padding: 0.5rem 3rem;
-                    font-size: 1.5rem;
-                    font-family: $fuente-secundaria;
-                    font-weight: bold;
-                }
-                #anotarse:hover {
-                    background-color: white;
-                    color: black;
-                }
+            box-shadow: 0 0 1rem 0.2rem rgba(0, 0, 0, 1);
+            h3 {
+                text-align: center;
+                font-size: 3rem;
+            }
+            padding: 2rem;
+            input {
+                display: block;
+                margin: 0.5rem auto;
+                border: solid black 2px;
+                border-radius: 2rem;
+                padding: 0.5rem 0 0.5rem 1rem;
+                font-size: 1.5rem;
+            }
+            #anotarse {
+                background-color: black;
+                color: white;
+                transition: all .5s ease;
+                letter-spacing: 0.2rem;
+                padding: 0.5rem 3rem;
+                font-size: 1.5rem;
+                font-family: $fuente-secundaria;
+                font-weight: bold;
+            }
+            #anotarse:hover {
+                background-color: white;
+                color: black;
             }
         }
         .iconos-footer {
@@ -555,6 +562,9 @@ footer {
         transform: translate(-50%, -50%);
         background-color: white;
         display: none; // Se cambia con el slidetoggle
+        user-select: none;
+        box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 1);
+        border-radius: 1rem;
         i {
             color: #c70505;
             position: absolute;
@@ -610,12 +620,16 @@ footer {
     z-index: 5;
     transition: all 1s ease;
     .resumen-inversiones {
-        width: 120rem;
+        width: 80%;
         text-align: center;
-        margin: 6rem auto;
+        margin: 8rem auto;
         background-color: white;
         user-select: none;
+        border-radius: 1rem;
         display: none; // Se cambia con el slidetoggle
+        box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 1);
+        overflow-y: scroll;
+        max-height: 80%;
         h3 {
             padding-top: 2rem;
             font-size: 3rem;
@@ -628,6 +642,10 @@ footer {
         }
         i:hover {
             cursor: pointer;
+        }
+        .texto-derecha {
+            text-align: right;
+            padding: .5rem 5rem .5rem 0;
         }
     }
 }

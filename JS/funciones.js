@@ -1,6 +1,61 @@
-// Funciones normales ------------------------------------------------
+/* HEADER */
+function scroll_links_header() {
+    $(".a-activos").click(function() {
+        $('html, body').animate({
+            scrollTop: $(".inversiones").offset().top
+        }, 500)
+    })
+    $(".a-preguntas-frecuentes").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#preguntas-frecuentes").offset().top
+        }, 500)
+    })
+    $(".a-contacto").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#contacto").offset().top
+        }, 500)
+    })
+}
 
-/* Calcular Inversiones */
+function cambio_logo_hover() {
+    $('#logo').hover(function() {
+        $('#logo img').attr('src', 'img/logo2.png')
+    }, function() {
+        $('#logo img').attr('src', 'img/logo.png')
+    })
+}
+
+/* SECCION INVERSIONES */
+function crear_activos(activos) {
+    for (i = 0; i < activos.length; i++) {
+        let nombre = activos[i].nombre
+        let etiqueta = activos[i].etiqueta
+        let descripcion = activos[i].descripcion
+        let moneda = activos[i].moneda
+        let porcentaje = activos[i].porcentaje
+        let cuotaparte = activos[i].cuotaparte
+        let riesgo = activos[i].riesgo
+        let identificador = i
+
+        let claseTermometro = 'fas fa-thermometer-quarter icono-termometro'
+        if (riesgo == 'medio') {
+            claseTermometro = 'fas fa-thermometer-three-quarters icono-termometro'
+        } else if (riesgo == 'alto') {
+            claseTermometro = 'fas fa-thermometer-full icono-termometro'
+        }
+
+        $('#productos').append(ComponenteActivo(identificador, riesgo, moneda, claseTermometro, nombre, etiqueta, descripcion, porcentaje, cuotaparte))
+    }
+}
+
+function validar_solo_numeros(nombre_id) {
+    $('#' + nombre_id).keypress(function(tecla) {
+        if (tecla.charCode < 48 || tecla.charCode > 57) {
+            return false
+        }
+    })
+}
+
 function calcular_inversion(dinero_inicial, porcentaje_inversion, dias, meses, anios, reinvertir, cantidad_reinvertida) {
 
     let dinero_final = 0
@@ -27,83 +82,6 @@ function calcular_inversion(dinero_inicial, porcentaje_inversion, dias, meses, a
     return [Number.parseFloat(ganancia).toFixed(2), Number.parseFloat(dinero_final).toFixed(2)]
 }
 
-/* Función para que solo ingresen numeros en los inputs de conoce mas */
-function solo_numeros(nombre_id) {
-    $('#' + nombre_id).keypress(function(tecla) {
-        if (tecla.charCode < 48 || tecla.charCode > 57) {
-            return false
-        }
-    })
-}
-
-/* Crear Activos */
-function crear_activos(activos) {
-    for (i = 0; i < activos.length; i++) {
-        let nombre = activos[i].nombre
-        let etiqueta = activos[i].etiqueta
-        let descripcion = activos[i].descripcion
-        let moneda = activos[i].moneda
-        let porcentaje = activos[i].porcentaje
-        let cuotaparte = activos[i].cuotaparte
-        let riesgo = activos[i].riesgo
-        let identificador = i
-
-        let claseTermometro = 'fas fa-thermometer-quarter icono-termometro'
-        if (riesgo == 'medio') {
-            claseTermometro = 'fas fa-thermometer-three-quarters icono-termometro'
-        } else if (riesgo == 'alto') {
-            claseTermometro = 'fas fa-thermometer-full icono-termometro'
-        }
-
-        $('#productos').append(ActivoComponente(identificador, riesgo, moneda, claseTermometro, nombre, etiqueta, descripcion, porcentaje, cuotaparte))
-    }
-}
-
-/* Filtracion */
-function filtracion(nombre_clase, clase_visible) {
-    // Por cada activo con el mismo nombre_clase entrara al for
-    let activo_riesgo = $('.' + nombre_clase)
-    for (i = 0; i < activo_riesgo.length; i++) {
-        // Si el activo contiene la clase_visible entonces la remueve, sino la agrega
-        clases = activo_riesgo[i].classList
-        if (clases.contains(clase_visible)) {
-            clases.remove(clase_visible)
-        } else {
-            clases.add(clase_visible)
-        }
-    }
-}
-
-/* Asignar los desplazamientos de los links del header */
-function scroll_inicio() {
-    $(".a-inicio").click(function() {
-        $('html, body').animate({ //aplican una funcion/evento o lo que sea, a todo el body
-            scrollTop: $(".seccion-inicial").offset().top
-        }, 500)
-    })
-
-    $(".a-activos").click(function() {
-        $('html, body').animate({ //aplican una funcion/evento o lo que sea, a todo el body
-            scrollTop: $(".inversiones").offset().top
-        }, 500)
-    })
-
-    $(".a-preguntas-frecuentes").click(function() {
-        $('html, body').animate({
-            scrollTop: $("#preguntas-frecuentes").offset().top
-        }, 500)
-    })
-
-    $(".a-contacto").click(function() {
-        $('html, body').animate({
-            scrollTop: $("#contacto").offset().top
-        }, 500)
-    })
-}
-
-// Funciones Evento --------------------------------------------------
-
-/* Crea el pop-up */
 function crear_conoce_mas(evento) {
     let numero = evento.target.parentNode.parentNode.id.split('-')[1]
     let etiqueta = activos[numero].etiqueta
@@ -111,26 +89,25 @@ function crear_conoce_mas(evento) {
 
     let contenedorConoceMas = $('#contenedor-conoce-mas')
     contenedorConoceMas.attr('class', 'contenedor-conoce-mas')
-    contenedorConoceMas.append(ConoceMasComponente(etiqueta, porcentaje))
+    contenedorConoceMas.append(ComponenteConoceMas(etiqueta, porcentaje))
 
-    solo_numeros('dinero-inicial')
-    solo_numeros('tiempo-anios')
-    solo_numeros('tiempo-meses')
-    solo_numeros('tiempo-dias')
-    solo_numeros('cantidad-reinvertida')
+    validar_solo_numeros('dinero-inicial')
+    validar_solo_numeros('tiempo-anios')
+    validar_solo_numeros('tiempo-meses')
+    validar_solo_numeros('tiempo-dias')
+    validar_solo_numeros('cantidad-reinvertida')
 
     $("#reinvertir").change(function() {
         $('#contenedor-reinversion').slideToggle(500)
     })
 
     $('#cerrar-conoce-mas').click(cerrar_conoce_mas)
-    $('#calcular-ganancia').click(resultado_conoce_mas)
+    $('#calcular-ganancia').click(agregar_resultado_conoce_mas)
 
     $('#conoce-mas').slideToggle(1000)
 }
 
-/* Funcion que agrega los resultados de los datos ingresados en el pop-up */
-function resultado_conoce_mas() {
+function agregar_resultado_conoce_mas() {
     let dinero_inicial = parseInt($('#dinero-inicial').val())
     let porcentaje = parseInt($('#porcentaje-activo').val())
     let anios = parseInt($('#tiempo-anios').val())
@@ -152,7 +129,7 @@ function resultado_conoce_mas() {
             let ganancia = valores[0]
             let dinero_final = valores[1]
 
-            $('#formulario').append(ConoceMasResultadoComponente(ganancia, dinero_final))
+            $('#formulario').append(ComponenteResultadoConoceMas(ganancia, dinero_final))
 
             $('#agregar-resumen').click(agregar_resumen)
 
@@ -179,16 +156,14 @@ function resultado_conoce_mas() {
             $('#dinero-final').attr('value', dinero_final)
         }
     } else {
-        alertify.notify('Por favor, complete los campos en blanco', 'alerta');
+        alertify.notify('Por favor, complete los campos en blanco', 'alerta')
     }
 }
 
-/* Funcion para que el icono cierre el pop-up */
 function cerrar_conoce_mas() {
     $('#contenedor-conoce-mas').removeAttr('class').empty()
 }
 
-/* Función para agregar al resumen */
 function agregar_resumen() {
 
     // Creo un array vacío donde colocar el resumen
@@ -221,19 +196,18 @@ function agregar_resumen() {
     cerrar_conoce_mas()
 }
 
-/* Mostrar las inversiones cuando abro el resumen */
-function abrir_resumen() {
+function abrir_resumen(evento) {
     let resumenGuardado = JSON.parse(localStorage.getItem("resumen"))
 
     // Si el Resumen no es null (vacio) entonces por cada elemento asigno los valores que necesito a variables
     if (resumenGuardado != null && resumenGuardado.length > 0) {
 
         // Cambio el icono de abrir resumen por el de cerrar resumen
-        $('#abrir-resumen').removeClass('fa-wallet').addClass('fa-hand-holding-usd').attr('id', 'cerrar-resumen')
-        $('#cerrar-resumen').click(cerrar_resumen)
+        $('#abrir-resumen').attr('style', 'display:none;')
+        $('#cerrar-resumen').removeAttr('style')
 
         // Asigno la clase para el fondo del resumen y agrego la estructura del resumen
-        $('#contenedor-resumen-inversiones').attr('class', 'contenedor-resumen-inversiones').append(ResumenHeaderComponente())
+        $('#contenedor-resumen-inversiones').attr('class', 'contenedor-resumen-inversiones').append(ComponenteResumenHeader())
 
         // Variables que se usan en el footer de la tabla
         let totalInicial = 0
@@ -256,32 +230,34 @@ function abrir_resumen() {
             totalFinal += parseFloat(dineroFinalResumen)
 
             // Agrego cada inversion guardada al tbody del resumen
-            $('#contenido-tabla').append(ResumenBodyComponente(i + 1, etiquetaResumen, dineroInicialResumen, porcentajeResumen, aniosResumen, mesesResumen, diasResumen, reinversionResumen, gananciaResumen, dineroFinalResumen))
+            $('#contenido-tabla').append(ComponenteResumenBody(i + 1, etiquetaResumen, dineroInicialResumen, porcentajeResumen, aniosResumen, mesesResumen, diasResumen, reinversionResumen, gananciaResumen, dineroFinalResumen))
         }
 
         // Agrego el footer del resumen con los totales
-        $('#contenido-resumen').append(ResumenFooterComponente(totalInicial, totalGanancia.toFixed(2), totalFinal.toFixed(2)))
+        $('#contenido-resumen').append(ComponenteResumenFooter(totalInicial, totalGanancia.toFixed(2), totalFinal.toFixed(2)))
 
         $('.remover').click(remover_item_resumen)
 
-        $('#resumen-inversiones').slideToggle(1000)
+        // Si se abre con el ícono entonces hace el deslizamiento, si se elimina un item entonces no
+        if (evento == undefined) {
+            $('#resumen-inversiones').slideToggle(0)
+        } else {
+            $('#resumen-inversiones').slideToggle(1000)
+        }
     } else {
         alertify.notify('El resumen está vacío', 'error')
     }
 }
 
-/* Cerrar el resumen cuando clickean en el icono */
 function cerrar_resumen() {
-
     // Cambio el icono de cerrar resumen por el de abrir resumen
-    $('#cerrar-resumen').removeClass('fa-hand-holding-usd').addClass('fa-wallet').attr('id', 'abrir-resumen')
-    $('#abrir-resumen').click(abrir_resumen)
+    $('#cerrar-resumen').attr('style', 'display:none;')
+    $('#abrir-resumen').removeAttr('style')
 
     // Remuevo la clase para el fondo del resumen y  el contenido del resumen
     $('#contenedor-resumen-inversiones').removeAttr('class').empty()
 }
 
-/* Remover un item del resumen */
 function remover_item_resumen(evento) {
     let id_item = evento.target.parentNode.parentNode.id
     let numero_item = id_item.split('-')[1]
@@ -300,7 +276,6 @@ function remover_item_resumen(evento) {
     abrir_resumen()
 }
 
-/* Separar cada filtracion para los activos */
 function filtrar_activos(evento) {
     let nombre = evento.target.id
     if (nombre == 'check-bajo') {
@@ -316,25 +291,70 @@ function filtrar_activos(evento) {
     }
 }
 
-/* Desplegar la informacion de pregunta frecuente */
-function ver_pregunta(evento) {
-    let id_pregunta = evento.currentTarget.id
-    let pregunta = $('#' + id_pregunta)
-    let respuesta = $('#' + id_pregunta + '  p')
-    let icono = $('#' + id_pregunta + ' i')
-
-    // Si la respuesta no se ve, la muestra. Si está visible, la esconde
-    if (respuesta[0].classList.length == 0) {
-        pregunta.css('max-height', '20rem')
-        respuesta.attr('class', 'pregunta-contenido-visible')
-        icono.addClass('rotar')
-    } else {
-        pregunta.css('max-height', '6rem')
-        respuesta.removeAttr('class')
-        icono.removeClass('rotar')
+function filtracion(nombre_clase, clase_visible) {
+    // Por cada activo con el mismo nombre_clase entrara al for
+    let activo_riesgo = $('.' + nombre_clase)
+    for (i = 0; i < activo_riesgo.length; i++) {
+        // Si el activo contiene la clase_visible entonces la remueve, sino la agrega
+        clases = activo_riesgo[i].classList
+        if (clases.contains(clase_visible)) {
+            clases.remove(clase_visible)
+        } else {
+            clases.add(clase_visible)
+        }
     }
 }
 
-function prueba() {
-    $('#logo img').attr('src', 'img/logo2.png')
+/* SECCION PREGUNTAS FRECUENTES */
+function ver_pregunta(evento) {
+    let id_pregunta = evento.currentTarget.id
+    let respuesta = $('#' + id_pregunta + '  p')
+    let icono = $('#' + id_pregunta + ' i')
+    respuesta.slideToggle(500)
+    if (icono.attr('style') == undefined) {
+        icono.attr('style', 'transform:rotate(-90deg)')
+    } else {
+        icono.removeAttr('style')
+    }
+}
+
+/* NEWSLETTER */
+function almacenar_usuarios_newsletter() {
+    let usuario_nombre = $('#newsletter-nombre').val()
+    let usuario_apellido = $('#newsletter-apellido').val()
+    let usuario_mail = $('#newsletter-mail').val()
+    if (usuario_nombre != '' && usuario_apellido != '' && usuario_mail != '') {
+        if (validar_mail(usuario_mail)) {
+            let usuarios = []
+            if (localStorage.getItem("usuarios newsletter") != null) {
+                usuarios = JSON.parse(localStorage.getItem("usuarios newsletter"))
+            }
+            let usuario = {
+                'nombre': usuario_nombre,
+                'apellido': usuario_apellido,
+                'mail': usuario_mail
+            }
+            usuarios.push(usuario)
+            localStorage.setItem("usuarios newsletter", JSON.stringify(usuarios))
+            $('#newsletter-nombre').val('')
+            $('#newsletter-apellido').val('')
+            $('#newsletter-mail').val('')
+            alertify.notify('Se ha suscripto con éxito', 'exito')
+        } else {
+            alertify.notify('Por favor, ingrese un mail válido', 'alerta')
+        }
+    } else {
+        alertify.notify('Por favor, complete los campos en blanco', 'alerta')
+    }
+}
+
+function validar_mail(mail) {
+    if (mail.indexOf('@') != -1) {
+        division = mail.split('@')
+        if (division[1].indexOf('.') != -1) {
+            return true
+        }
+    } else {
+        return false
+    }
 }

@@ -25,6 +25,10 @@ section {
   margin-top: 5rem;
   margin-bottom: 5rem; }
 
+button,
+input {
+  outline: none !important; }
+
 .no-visible-riesgo,
 .no-visible-moneda {
   display: none; }
@@ -46,6 +50,11 @@ section {
   background-color: #fff3cd;
   border-color: #ffeeba; }
 
+.ajs-message.ajs-exito {
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc; }
+
 header {
   user-select: none;
   background-color: #eeeeee;
@@ -53,7 +62,8 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10; }
+  z-index: 10;
+  box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.5); }
   header .navegador {
     display: flex;
     justify-content: space-between; }
@@ -131,7 +141,8 @@ header {
     display: flex;
     justify-content: space-between; }
     .tipos-inversionistas .tipo-inversor .card {
-      width: calc(33.3% - 2rem); }
+      width: calc(33.3% - 2rem);
+      box-shadow: 0 0 1rem 0.2rem rgba(0, 0, 0, 0.7); }
       .tipos-inversionistas .tipo-inversor .card img {
         height: 7rem;
         width: 6rem;
@@ -240,7 +251,7 @@ header {
     .inversiones .productos .card {
       width: 22rem;
       height: 30rem;
-      box-shadow: 0.2rem 0.2rem 1rem #000000;
+      box-shadow: 0 0 1rem 0.2rem black;
       margin: 0 2rem 4rem 2rem;
       transition: all .5s ease; }
       .inversiones .productos .card .icono-termometro {
@@ -309,7 +320,7 @@ header {
       margin-top: 2rem;
       border: 1px solid black;
       border-radius: 2rem;
-      max-height: 6rem; }
+      box-shadow: 0 0 0.4rem 0.2rem rgba(0, 0, 0, 0.4); }
       .preguntas-frecuentes .preguntas .contenedor-pregunta .pregunta .pregunta-titulo {
         display: flex;
         justify-content: space-between;
@@ -321,14 +332,10 @@ header {
           color: #1655F6;
           max-width: 90%; }
         .preguntas-frecuentes .preguntas .contenedor-pregunta .pregunta .pregunta-titulo i {
-          transition: transform 1s ease-in; }
+          transition: transform .5s ease-in-out; }
       .preguntas-frecuentes .preguntas .contenedor-pregunta .pregunta p {
-        transition: opacity .5s linear;
         padding: 0 2rem;
-        opacity: 0; }
-      .preguntas-frecuentes .preguntas .contenedor-pregunta .pregunta .pregunta-contenido-visible {
-        opacity: 1;
-        transition: opacity 1s linear 1s; }
+        display: none; }
     .preguntas-frecuentes .preguntas .contenedor-pregunta .pregunta:hover {
       cursor: pointer; }
 
@@ -344,31 +351,31 @@ footer {
     footer .footer-arriba .newsletter {
       background-color: #1655F6;
       border-radius: 2rem;
-      color: white; }
-      footer .footer-arriba .newsletter form {
-        padding: 2rem; }
-        footer .footer-arriba .newsletter form h3 {
-          text-align: center;
-          font-size: 3rem; }
-        footer .footer-arriba .newsletter form input {
-          display: block;
-          margin: 0.5rem auto;
-          border: solid black 2px;
-          border-radius: 2rem;
-          padding: 0.5rem 0 0.5rem 1rem;
-          font-size: 1.5rem; }
-        footer .footer-arriba .newsletter form #anotarse {
-          background-color: black;
-          color: white;
-          transition: all .5s ease;
-          letter-spacing: 0.2rem;
-          padding: 0.5rem 3rem;
-          font-size: 1.5rem;
-          font-family: "Titillium Web", sans-serif;
-          font-weight: bold; }
-        footer .footer-arriba .newsletter form #anotarse:hover {
-          background-color: white;
-          color: black; }
+      color: white;
+      box-shadow: 0 0 1rem 0.2rem black;
+      padding: 2rem; }
+      footer .footer-arriba .newsletter h3 {
+        text-align: center;
+        font-size: 3rem; }
+      footer .footer-arriba .newsletter input {
+        display: block;
+        margin: 0.5rem auto;
+        border: solid black 2px;
+        border-radius: 2rem;
+        padding: 0.5rem 0 0.5rem 1rem;
+        font-size: 1.5rem; }
+      footer .footer-arriba .newsletter #anotarse {
+        background-color: black;
+        color: white;
+        transition: all .5s ease;
+        letter-spacing: 0.2rem;
+        padding: 0.5rem 3rem;
+        font-size: 1.5rem;
+        font-family: "Titillium Web", sans-serif;
+        font-weight: bold; }
+      footer .footer-arriba .newsletter #anotarse:hover {
+        background-color: white;
+        color: black; }
     footer .footer-arriba .iconos-footer h3 {
       font-size: 3rem;
       margin-bottom: 2rem;
@@ -405,7 +412,10 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    display: none; }
+    display: none;
+    user-select: none;
+    box-shadow: 0 0 1rem 0.5rem black;
+    border-radius: 1rem; }
     .contenedor-conoce-mas .conoce-mas i {
       color: #c70505;
       position: absolute;
@@ -447,12 +457,16 @@ footer {
   z-index: 5;
   transition: all 1s ease; }
   .contenedor-resumen-inversiones .resumen-inversiones {
-    width: 120rem;
+    width: 80%;
     text-align: center;
-    margin: 6rem auto;
+    margin: 8rem auto;
     background-color: white;
     user-select: none;
-    display: none; }
+    border-radius: 1rem;
+    display: none;
+    box-shadow: 0 0 1rem 0.5rem black;
+    overflow-y: scroll;
+    max-height: 80%; }
     .contenedor-resumen-inversiones .resumen-inversiones h3 {
       padding-top: 2rem;
       font-size: 3rem; }
@@ -462,3 +476,6 @@ footer {
       color: #c70505; }
     .contenedor-resumen-inversiones .resumen-inversiones i:hover {
       cursor: pointer; }
+    .contenedor-resumen-inversiones .resumen-inversiones .texto-derecha {
+      text-align: right;
+      padding: .5rem 5rem .5rem 0; }

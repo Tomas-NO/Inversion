@@ -7,35 +7,19 @@ $(document).ready(function() {
         })
         .done(function(resultado) { //caso correcto (callback)
             activos = resultado.activos
-
-            // Crea los activos
             crear_activos(activos)
 
             // Inicializo Animation on Scroll
             AOS.init();
 
-            // Cambio de color el logo cuando le hacen hover
-            $('#logo').hover(function() {
-                $('#logo img').attr('src', 'img/logo2.png')
-            }, function() {
-                $('#logo img').attr('src', 'img/logo.png')
-            })
-
-
-            // Aplico el desplazamiento de los links del header
-            scroll_inicio()
-
-            // Traer diferente info dependiendo del activo del que se quiera saber mas
+            cambio_logo_hover()
+            scroll_links_header()
             $('.boton-conoce-mas').click(crear_conoce_mas)
-
-            // Evento para abrir el resumen
             $('#abrir-resumen').click(abrir_resumen)
-
-            // Asigna el evento para filtrar los activos
+            $('#cerrar-resumen').click(cerrar_resumen)
             $('.filtradores').click(filtrar_activos)
-
-            // Muestra o esconde el contenido de las preguntas frecuentes
             $('.pregunta').click(ver_pregunta)
+            $('#anotarse').click(almacenar_usuarios_newsletter)
         })
         .fail(function(xhr, status, error) { //caso incorrecto (callback)
             console.log(xhr)

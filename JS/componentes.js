@@ -1,5 +1,4 @@
-// HTML de cada activo disponible
-function ActivoComponente(identificador, riesgo, moneda, claseTermometro, nombre, etiqueta, descripcion, porcentaje, cuotaparte) {
+function ComponenteActivo(identificador, riesgo, moneda, claseTermometro, nombre, etiqueta, descripcion, porcentaje, cuotaparte) {
     return `
     <div id="activo-${identificador}" class="card r-${riesgo} moneda-${moneda}">
         <i class="${claseTermometro}" aria-hidden="true"></i>
@@ -17,8 +16,7 @@ function ActivoComponente(identificador, riesgo, moneda, claseTermometro, nombre
     `
 }
 
-// HTML del pop-up
-function ConoceMasComponente(etiqueta, porcentaje) {
+function ComponenteConoceMas(etiqueta, porcentaje) {
     return `
     <div class="conoce-mas" id="conoce-mas">
         <i class="fas fa-times" id="cerrar-conoce-mas" aria-hidden="true"></i>
@@ -59,8 +57,7 @@ function ConoceMasComponente(etiqueta, porcentaje) {
     `
 }
 
-// HTML que se agrega al pop-up cuando se calcula la ganancia
-function ConoceMasResultadoComponente(ganancia, dinero_final) {
+function ComponenteResultadoConoceMas(ganancia, dinero_final) {
     return `
     <div id="conoce-mas-resultado">
         <label for="ganancia-inversion">Ganancia</label>
@@ -72,8 +69,7 @@ function ConoceMasResultadoComponente(ganancia, dinero_final) {
     `
 }
 
-// HTML de la estructura + el header del resumen
-function ResumenHeaderComponente() {
+function ComponenteResumenHeader() {
     return `
     <div class="resumen-inversiones" id="resumen-inversiones">
         <h3>Resumen</h3>
@@ -83,7 +79,7 @@ function ResumenHeaderComponente() {
                     <th scope="column"></th>
                     <th scope="column">Nombre</th>
                     <th scope="column">Dinero Inicial</th>
-                    <th scope="column">Porcentaje</th>
+                    <th scope="column">%</th>
                     <th scope="column">Años</th>
                     <th scope="column">Meses</th>
                     <th scope="column">Dias</th>
@@ -100,40 +96,38 @@ function ResumenHeaderComponente() {
     `
 }
 
-// HTML de cada inversion en el resumen
-function ResumenBodyComponente(identificador, etiqueta, dinero_inicial, porcentaje, anios, meses, dias, cantidad_reinvertida, ganancia, dinero_final) {
+function ComponenteResumenBody(identificador, etiqueta, dinero_inicial, porcentaje, anios, meses, dias, cantidad_reinvertida, ganancia, dinero_final) {
     return `
     <tr id="inversion-${identificador}">
         <th scope="row">${identificador}</th>
         <td>${etiqueta}</td>
-        <td>${dinero_inicial}</td>
+        <td class="texto-derecha">${dinero_inicial}</td>
         <td>${porcentaje}</td>
         <td>${anios}</td>
         <td>${meses}</td>
         <td>${dias}</td>
         <td>${cantidad_reinvertida}</td>
-        <td>${ganancia}</td>
-        <td>${dinero_final}</td>
+        <td class="texto-derecha">${ganancia}</td>
+        <td class="texto-derecha">${dinero_final}</td>
         <td><i class="fas fa-window-close remover" id="remover" aria-hidden="true"></i></td>
     </tr>
     `
 }
 
-// HTML del footer del resumen
-function ResumenFooterComponente(totalInicial, totalGanancia, totalFinal) {
+function ComponenteResumenFooter(totalInicial, totalGanancia, totalFinal) {
     return `
     <tfoot>
         <tr>
             <td></td>
             <td>Total</td>
-            <td>${totalInicial}</td>
+            <td class="texto-derecha">${totalInicial}</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td>${totalGanancia}</td>
-            <td>${totalFinal}</td>
+            <td class="texto-derecha">${totalGanancia}</td>
+            <td class="texto-derecha">${totalFinal}</td>
             <td></td>
         </tr>
     </tfoot>
